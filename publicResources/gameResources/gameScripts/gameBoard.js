@@ -1455,5 +1455,5 @@ class Pos {
     }
 }
 
-export { FacadeGame, Figur, Cell, TypeOfFigur, TypeOfCell, Move, Pos }
+export { FacadeGame, Figur, Cell, TypeOfFigur, TypeOfCell, Move, Pos, Bot }
 

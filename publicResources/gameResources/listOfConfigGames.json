@@ -26,5 +26,12 @@
         "iconUrl": "icons/chess_diagonal_icon.png",
         "amountOfPlayers": [ 2 ],
         "teams": ["white", "black"]
+    },
+    "chaturanga" : {
+        "src": "configsOfGame/chaturangaConfig.js",
+        "description": "old party version of old chess",
+        "iconUrl": "icons/chess_chaturanga_icon.png",
+        "amountOfPlayers": [ 4 ],
+        "teams": ["blue", "red", "yellow", "green"]
     }
 }

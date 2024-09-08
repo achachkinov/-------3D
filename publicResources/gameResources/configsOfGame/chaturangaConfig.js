@@ -200,16 +200,16 @@ rockDisplayInformationOfType.setBuilderModel( rockModel )
 rockType.setDisplayInformationOfType( rockDisplayInformationOfType )
 
 let firstRockMove = new Move()
-firstRockMove.setFunctOfCalcOfMovePosition( firstCalculatorPositionForRock )
+firstRockMove.setFunctOfCalcOfMovePosition( firstCalculatorPositionForBishop )
 firstRockMove.setFunctOfIsPosibleToMove( classicPosibleToMove )
 firstRockMove.setFunctOfIsTimeToBreak( classicTimeToBreak )
 firstRockMove.setFunctOfChangeBoard( classicChangeBoard )
 let secondRockMove = firstRockMove.getCopy()
-secondRockMove.setFunctOfCalcOfMovePosition( secondCalculatorPositionForRock )
+secondRockMove.setFunctOfCalcOfMovePosition( secondCalculatorPositionForBishop )
 let thirdRockMove = firstRockMove.getCopy()
-thirdRockMove.setFunctOfCalcOfMovePosition( thirdCalculatorPositionForRock )
+thirdRockMove.setFunctOfCalcOfMovePosition( thirdCalculatorPositionForBishop )
 let fourthRockMove = firstRockMove.getCopy()
-fourthRockMove.setFunctOfCalcOfMovePosition( fourthCalculatorPositionForRock )
+fourthRockMove.setFunctOfCalcOfMovePosition( fourthCalculatorPositionForBishop )
 rockType.addMove( firstRockMove )
 rockType.addMove( secondRockMove )
 rockType.addMove( thirdRockMove )
@@ -252,73 +252,27 @@ bishopDisplayInformationOfType.setBuilderModel( bishopModel )
 bishopType.setDisplayInformationOfType( bishopDisplayInformationOfType )
 
 let firstBishopMove = new Move()
-firstBishopMove.setFunctOfCalcOfMovePosition( firstCalculatorPositionForBishop )
+firstBishopMove.setFunctOfCalcOfMovePosition( firstCalculatorPositionForRock )
 firstBishopMove.setFunctOfIsPosibleToMove( classicPosibleToMove )
 firstBishopMove.setFunctOfIsTimeToBreak( classicTimeToBreak )
 firstBishopMove.setFunctOfChangeBoard( classicChangeBoard )
 let secondBishopMove = firstBishopMove.getCopy()
-secondBishopMove.setFunctOfCalcOfMovePosition( secondCalculatorPositionForBishop )
+secondBishopMove.setFunctOfCalcOfMovePosition( secondCalculatorPositionForRock )
 let thirdBishopMove = firstBishopMove.getCopy()
-thirdBishopMove.setFunctOfCalcOfMovePosition( thirdCalculatorPositionForBishop )
+thirdBishopMove.setFunctOfCalcOfMovePosition( thirdCalculatorPositionForRock )
 let fourthBishopMove = firstBishopMove.getCopy()
-fourthBishopMove.setFunctOfCalcOfMovePosition( fourthCalculatorPositionForBishop )
+fourthBishopMove.setFunctOfCalcOfMovePosition( fourthCalculatorPositionForRock )
 bishopType.addMove( firstBishopMove )
 bishopType.addMove( secondBishopMove )
 bishopType.addMove( thirdBishopMove )
 bishopType.addMove( fourthBishopMove )
 
 
-let queenType = new TypeOfFigur()
 
-let queenDisplayInformationOfType = new DisplayInformationOfType()
-let queenModel = new BuilderModel()
-queenModel.setScale( 25 )
-queenModel.drawHoop( new Dot( 152, 0 ) )
-queenModel.drawHoop( new Dot( 152, 42 ) )
-queenModel.drawHoop( new Dot( 138, 54 ) )
-queenModel.drawHoop( new Dot( 138, 62 ) )
-queenModel.drawHoop( new Dot( 148, 76 ) )
-queenModel.drawSphereOutside( new Dot( 129, 115 ), 95 )
-queenModel.drawHoop( new Dot( 118, 126 ) )
-queenModel.drawSphereOutside( new Dot( 100, 150 ), 42 )
-queenModel.drawHoop( new Dot( 105, 178 ) )
-queenModel.drawHoop( new Dot( 90, 192 ) )
-queenModel.drawSphereInside( new Dot( 58, 390 ), 450 )
-queenModel.drawHoop( new Dot( 58, 440 ) )
-queenModel.drawSphereOutside( new Dot( 70, 410 ) )
-queenModel.drawHoop( new Dot( 90, 418 ) )
-queenModel.drawSphereInside( new Dot( 98, 444 ) )
-queenModel.drawHoop( new Dot( 88, 450 ) )
-queenModel.drawHoop( new Dot( 86, 462 ) )
-queenModel.drawSphereOutside( new Dot( 78, 468 ), 20 )
-queenModel.drawHoop( new Dot( 70, 470 ) )
-queenModel.drawSphereOutside( new Dot( 60, 482 ), 20 )
-queenModel.drawHoop( new Dot( 60, 486 ) )
-queenModel.drawHoop( new Dot( 66, 494 ) )
-queenModel.drawSphereOutside( new Dot( 66, 498 ) )
-queenModel.drawHoop( new Dot( 60, 506 ) ) 
-queenModel.drawSphereOutside( new Dot( 90, 652 ), 400 )
-queenModel.drawSphereOutside( new Dot( 27, 684 ), 110 )
-queenModel.drawSphereInside( new Dot( 30, 695 ), 16 )
-queenModel.drawSphereOutside( new Dot( 22, 705 ), 16 )
-queenModel.drawSphereOutside( new Dot( 0, 709 ), 85 )
-queenDisplayInformationOfType.setBuilderModel( queenModel )
-queenType.setDisplayInformationOfType( queenDisplayInformationOfType )
+let blueKnightType = new TypeOfFigur()
 
-queenType.addMove( firstBishopMove )
-queenType.addMove( secondBishopMove )
-queenType.addMove( thirdBishopMove )
-queenType.addMove( fourthBishopMove )
-queenType.addMove( firstRockMove )
-queenType.addMove( secondRockMove )
-queenType.addMove( thirdRockMove )
-queenType.addMove( fourthRockMove )
-
-
-let whiteKnightType = new TypeOfFigur()
-
-let whiteKnightDisplayInformationOfType = new DisplayInformationOfType()
-let whiteKnightModel = new BuilderCompositeModel()
+let blueKnightDisplayInformationOfType = new DisplayInformationOfType()
+let blueKnightModel = new BuilderCompositeModel()
 let baseOfKnight = new BuilderModel()
 let headOfKnigth = new BuilderModel()
 baseOfKnight.setScale( 29 )
@@ -359,30 +313,56 @@ headOfKnigth.drawDotOfPath( new Dot( -103, 155 ) )
 headOfKnigth.drawDotOfPath( new Dot( -76, 130 ) )
 headOfKnigth.finishPath()
 headOfKnigth.rotateAroundAxisY( -90 )
-whiteKnightModel.addBuilderModel( "baseknight", baseOfKnight )
-whiteKnightModel.addBuilderModel( "headknight", headOfKnigth )
-whiteKnightDisplayInformationOfType.setBuilderModel( whiteKnightModel )
-whiteKnightType.setDisplayInformationOfType( whiteKnightDisplayInformationOfType )
+blueKnightModel.addBuilderModel( "baseknight", baseOfKnight )
+blueKnightModel.addBuilderModel( "headknight", headOfKnigth )
+blueKnightDisplayInformationOfType.setBuilderModel( blueKnightModel )
+blueKnightType.setDisplayInformationOfType( blueKnightDisplayInformationOfType )
 
 let knightMove = new Move()
 knightMove.setFunctOfCalcOfMovePosition( knightCalcPos )
 knightMove.setFunctOfIsPosibleToMove( classicPosibleToMove )
 knightMove.setFunctOfIsTimeToBreak( knightTimeToBreak )
 knightMove.setFunctOfChangeBoard( classicChangeBoard )
-whiteKnightType.addMove(knightMove)
+blueKnightType.addMove(knightMove)
 
 
-let blackKnightType = new TypeOfFigur()
-let blackKnightDisplayInformationOfType = new DisplayInformationOfType()
-let blackKnightModel = new BuilderCompositeModel()
-let blackHeadOfKnigth = headOfKnigth.getCopy()
-blackHeadOfKnigth.rotateAroundAxisY( 180 )
-blackKnightModel.addBuilderModel( "baseknight", baseOfKnight )
-blackKnightModel.addBuilderModel( "headknight", blackHeadOfKnigth )
-blackKnightDisplayInformationOfType.setBuilderModel( blackKnightModel )
-blackKnightType.setDisplayInformationOfType( blackKnightDisplayInformationOfType )
+let redKnightType = new TypeOfFigur()
+let redKnightDisplayInformationOfType = new DisplayInformationOfType()
+let redKnightModel = new BuilderCompositeModel()
+let redHeadOfKnigth = headOfKnigth.getCopy()
+redHeadOfKnigth.rotateAroundAxisY( 90 )
+redKnightModel.addBuilderModel( "baseknight", baseOfKnight )
+redKnightModel.addBuilderModel( "headknight", redHeadOfKnigth )
+redKnightDisplayInformationOfType.setBuilderModel( redKnightModel )
+redKnightType.setDisplayInformationOfType( redKnightDisplayInformationOfType )
 
-blackKnightType.addMove(knightMove)
+redKnightType.addMove(knightMove)
+
+
+let yellowKnightType = new TypeOfFigur()
+let yellowKnightDisplayInformationOfType = new DisplayInformationOfType()
+let yellowKnightModel = new BuilderCompositeModel()
+let yellowHeadOfKnigth = headOfKnigth.getCopy()
+yellowHeadOfKnigth.rotateAroundAxisY( 180 )
+yellowKnightModel.addBuilderModel( "baseknight", baseOfKnight )
+yellowKnightModel.addBuilderModel( "headknight", yellowHeadOfKnigth )
+yellowKnightDisplayInformationOfType.setBuilderModel( yellowKnightModel )
+yellowKnightType.setDisplayInformationOfType( yellowKnightDisplayInformationOfType )
+
+yellowKnightType.addMove(knightMove)
+
+
+let greenKnightType = new TypeOfFigur()
+let greenKnightDisplayInformationOfType = new DisplayInformationOfType()
+let greenKnightModel = new BuilderCompositeModel()
+let greenHeadOfKnigth = headOfKnigth.getCopy()
+greenHeadOfKnigth.rotateAroundAxisY( -90 )
+greenKnightModel.addBuilderModel( "baseknight", baseOfKnight )
+greenKnightModel.addBuilderModel( "headknight", greenHeadOfKnigth )
+greenKnightDisplayInformationOfType.setBuilderModel( greenKnightModel )
+greenKnightType.setDisplayInformationOfType( greenKnightDisplayInformationOfType )
+
+redKnightType.addMove(knightMove)
 
 
 let kingType = new TypeOfFigur()
@@ -444,7 +424,7 @@ kingMove.setFunctOfChangeBoard( classicChangeBoard )
 kingType.addMove( kingMove )
 
 
-let whitePawnType = new TypeOfFigur()
+let pawnType = new TypeOfFigur()
 
 let pawnDisplayInformationOfType = new DisplayInformationOfType()
 let pawnModel = new BuilderModel()
@@ -463,7 +443,7 @@ pawnModel.drawSphereOutside( new Dot(17,74) )
 pawnModel.drawHoop( new Dot(7,79) )
 pawnModel.drawSphereOutsideCenterRad( new Dot(0,115) )
 pawnDisplayInformationOfType.setBuilderModel( pawnModel )
-whitePawnType.setDisplayInformationOfType( pawnDisplayInformationOfType )
+pawnType.setDisplayInformationOfType( pawnDisplayInformationOfType )
 
 let whitePawnMoveForward = new Move()
 whitePawnMoveForward.setFunctOfCalcOfMovePosition( whitePawnCalcMoveForward )
@@ -477,30 +457,9 @@ let whitePawnEatFigur = whitePawnMoveForward.getCopy()
 whitePawnEatFigur.setFunctOfCalcOfMovePosition( whitePawnCalcEatFigur )
 whitePawnEatFigur.setFunctOfIsPosibleToMove( pawnPossibleEat )
 whitePawnEatFigur.setFunctOfIsTimeToBreak( pawnTimeToBreakForEat )
-whitePawnType.addMove( whitePawnMoveForward )
-whitePawnType.addMove( whitePawnMoveTwoCellsForward )
-whitePawnType.addMove( whitePawnEatFigur )
-
-
-let blackPawnType = new TypeOfFigur()
-
-blackPawnType.setDisplayInformationOfType( pawnDisplayInformationOfType )
-
-let blackPawnMoveForward = new Move()
-blackPawnMoveForward.setFunctOfCalcOfMovePosition( blackPawnCalcMoveForward )
-blackPawnMoveForward.setFunctOfIsPosibleToMove( pawnPossibleMoveForward )
-blackPawnMoveForward.setFunctOfIsTimeToBreak( pawnTimeToBreak )
-blackPawnMoveForward.setFunctOfChangeBoard( pawnChangeBoard )
-let blackPawnMoveTwoCellsForward = blackPawnMoveForward.getCopy()
-blackPawnMoveTwoCellsForward.setFunctOfCalcOfMovePosition( blackPawnCalcMoveTwoCellsForward )
-blackPawnMoveTwoCellsForward.setFunctOfIsPosibleToMove( blackPawnPossibleTwoCellsForward )
-let blackPawnEatFigur = blackPawnMoveForward.getCopy()
-blackPawnEatFigur.setFunctOfCalcOfMovePosition( blackPawnCalcEatFigur )
-blackPawnEatFigur.setFunctOfIsPosibleToMove( pawnPossibleEat )
-blackPawnEatFigur.setFunctOfIsTimeToBreak( pawnTimeToBreakForEat )
-blackPawnType.addMove( blackPawnMoveForward )
-blackPawnType.addMove( blackPawnMoveTwoCellsForward )
-blackPawnType.addMove( blackPawnEatFigur )
+pawnType.addMove( whitePawnMoveForward )
+//whitePawnType.addMove( whitePawnMoveTwoCellsForward )
+pawnType.addMove( whitePawnEatFigur )
 
 
 
@@ -571,24 +530,8 @@ function pawnTimeToBreakForEat( board, startPos, itteratorNum, endPos ) {
 function pawnChangeBoard( board, startPos, endPos ) {
     board.selectFigurByPosition( startPos )
     board.setPositionForSelectFigur( endPos )
-    let testPos1 = endPos.getCopy()
-    testPos1.addY( 1 )
-    let testPos2 = endPos.getCopy()
-    testPos2.addY( -1 )
-    if ( !board.isEnableCellOnPos( testPos1 ) || !board.isEnableCellOnPos( testPos2 ) ) {
-        let pawn = board.getFigurByPosition( endPos )
-        let namePawn = pawn.getName()
-        let team = pawn.getTeam()
-        let num = namePawn.replace( "pawn", "" )
-        num = num.replace( team, "" )
-        num = Number( num )
-        let newType = "queen"
-        let nameQueen = team + newType + num
-        let copyEndPos = endPos.getCopy()
-        board.selectFigurByName( nameQueen )
-        board.setPositionForSelectFigur( copyEndPos )
-    }
     changeWalkingTeam( board )
+    return board
 }
 
 
@@ -640,8 +583,8 @@ function fourthCalculatorPositionForBishop( board, startPos, itteratorNum) {
 function bishopCalcPos(  board, startPos, itteratorNum, a, b ) {
     let endPos = startPos.getCopy()
     itteratorNum++
-    let differentX = a*itteratorNum
-    let differentY = b*itteratorNum
+    let differentX = a*itteratorNum*2
+    let differentY = b*itteratorNum*2
     endPos.addX( differentX )
     endPos.addY( differentY )
     return endPos
@@ -649,32 +592,6 @@ function bishopCalcPos(  board, startPos, itteratorNum, a, b ) {
 
 
 function knightCalcPos( board, startPos, itteratorNum ) {
-    // let endPos = startPos.getCopy()
-    // let fork = Math.floor(itteratorNum/5)
-    // let cellNum = itteratorNum % 5
-    // let xOffSet = 0
-    // let yOffSet = 0
-    // for ( let i = 0; i < Math.min(cellNum, 2); i++ ) {
-    //     xOffSet++
-    // }
-    // for ( let i = 2; i < cellNum; i++ ) {
-    //     yOffSet++
-    // }
-    // if ( fork == 0 ) {
-    //     endPos.addY( xOffSet )
-    //     endPos.addX( yOffSet )
-    // } else if ( fork == 1 ) {
-    //     endPos.addX( xOffSet )
-    //     endPos.addY( -yOffSet )
-    // } else if ( fork == 2 ) {
-    //     endPos.addX( -yOffSet )
-    //     endPos.addY( -xOffSet )
-    // } else if ( fork == 3 ) {
-    //     endPos.addX( -xOffSet )
-    //     endPos.addY( yOffSet )
-    // }
-    // console.log( xOffSet, yOffSet )
-    // return endPos
     let endPos = startPos.getCopy()
     let xOffSet = 1
     let yOffSet = 2
@@ -704,8 +621,18 @@ function knightTimeToBreak(board, startPos, itteratorNum, endPos) {
 
 
 function whitePawnCalcMoveForward( board, startPos, itteratorNum ) {
+    let figur = board.getFigurByPosition( startPos )
     let endPos = startPos.getCopy()
-    endPos.addY( 1 )
+    if ( figur.getTeam() == "blue" ) {
+        endPos.addY( 1 )
+    } else if ( figur.getTeam() == "red" ) {
+        endPos.addX( 1 )
+    } else if ( figur.getTeam() == "yellow" ) {
+        endPos.addY( -1 )
+    } else if ( figur.getTeam() == "green" ) {
+        endPos.addX( -1 )
+    }
+    console.log( endPos, "what" )
     return endPos
 } 
 
@@ -727,42 +654,23 @@ function whitePawnPossibleTwoCellsForward( board, startPos, itteratorNum , endPo
 }
 
 function whitePawnCalcEatFigur( board, startPos, itteratorNum) {
+    let figur = board.getFigurByPosition( startPos )
     let endPos = startPos.getCopy()
-    endPos.addY( 1 )
     let x = 1 -2*itteratorNum
-    endPos.addX( x )
-    return endPos
-}
-
-
-function blackPawnCalcMoveForward( board, startPos, itteratorNum ) {
-    let endPos = startPos.getCopy()
-    endPos.addY( -1 )
-    return endPos
-} 
-
-function blackPawnCalcMoveTwoCellsForward( board, startPos, itteratorNum ) {
-    let endPos = startPos.getCopy()
-    endPos.addY( -2 )
-    return endPos
-}
-
-function blackPawnPossibleTwoCellsForward( board, startPos, itteratorNum , endPos) {
-    let testPos = startPos.getCopy()
-    testPos.addY( -1 )
-    let resultFirstCell = ( board.isEnableCellOnPos( testPos ) & !board.isEnableFigurOnPos( testPos ) )
-    let resultSecondCell = ( board.isEnableCellOnPos( endPos ) & !board.isEnableFigurOnPos( endPos ) )
-    testPos.addY( 3 )
-    let resultOfEnableCell = !board.isEnableCellOnPos( testPos )
-    let totalResult = resultFirstCell & resultSecondCell & resultOfEnableCell 
-    return totalResult
-}
-
-function blackPawnCalcEatFigur( board, startPos, itteratorNum) {
-    let endPos = startPos.getCopy()
-    endPos.addY( -1 )
-    let x = 1 -2*itteratorNum
-    endPos.addX( x )
+    if ( figur.getTeam() == "blue" ) {
+        endPos.addY( 1 )
+        endPos.addX( x )
+    } else if ( figur.getTeam() == "red" ) {
+        endPos.addX( 1 )
+        endPos.addY( x )
+    } else if ( figur.getTeam() == "yellow" ) {
+        endPos.addY( -1 )
+        endPos.addX( x )
+    } else if ( figur.getTeam() == "green" ) {
+        endPos.addX( -1 )
+        endPos.addY( x )
+    }
+    console.log( endPos, "what2" )
     return endPos
 }
 
@@ -784,10 +692,14 @@ function changeWalkingTeam( board ) {
     // } else {
     //     board.setWalkingTeam( "white" )
     // }
-    if ( board.getWalkingTeam() == "white" ) {
-        board.setWalkingTeam( "black" )
-    } else {
-        board.setWalkingTeam( "white" )
+    if ( board.getWalkingTeam() == "blue" ) {
+        board.setWalkingTeam( "red" )
+    } else if ( board.getWalkingTeam() == "red" ){
+        board.setWalkingTeam( "yellow" )
+    } else if ( board.getWalkingTeam() == "yellow" ) {
+        board.setWalkingTeam( "green" )
+    } else if ( board.getWalkingTeam( "green" ) ) {
+        board.setWalkingTeam( "blue" )
     }
     //moveIndex++
 }
@@ -885,74 +797,78 @@ function getNumberOfCellByPosition( x, y ) {
 
 let quality = 6
 
-let blackTeamName = "black"
-let whiteTeamName = "white"
+let blueTeamName = "blue"
+let redTeamName = "red"
+let yellowTeamName = "yellow"
+let greenTeamName = "green"
 
-let whiteColorList = ["#13394D","#8a0a07"]
-let whiteFigurDisplayInformation = new DisplayInformationOfElement()
-whiteFigurDisplayInformation.setColorList( whiteColorList )
-whiteFigurDisplayInformation.setQuality( quality )
+let blueColorList = ["#13394D","#8a0a07"]
+let blueFigurDisplayInformation = new DisplayInformationOfElement()
+blueFigurDisplayInformation.setColorList( blueColorList )
+blueFigurDisplayInformation.setQuality( quality )
 
-let blackFigurColorList = ["#8a0a07","#13394D"]
-let blackFigurDisplayInformation = new DisplayInformationOfElement()
-blackFigurDisplayInformation.setColorList( blackFigurColorList )
-blackFigurDisplayInformation.setQuality( quality )
+let redFigurColorList = ["#8a0a07","#13394D"]
+let redFigurDisplayInformation = new DisplayInformationOfElement()
+redFigurDisplayInformation.setColorList( redFigurColorList )
+redFigurDisplayInformation.setQuality( quality )
 
-let initializationListWhiteFigurs = [
+let yellowColorList = ["#9c8e19","#8a0a07"]
+let yellowFigurDisplayInformation = new DisplayInformationOfElement()
+yellowFigurDisplayInformation.setColorList( yellowColorList )
+yellowFigurDisplayInformation.setQuality( quality )
+
+let greenFigurColorList = ["#125632","#13394D"]
+let greenFigurDisplayInformation = new DisplayInformationOfElement()
+greenFigurDisplayInformation.setColorList( greenFigurColorList )
+greenFigurDisplayInformation.setQuality( quality )
+
+let initializationListBlueFigurs = [
     [ "king", kingType ],
-    [ "queen", queenType ],
-    [ "bishop1", bishopType],
-    [ "bishop2", bishopType],
-    [ "knight1", whiteKnightType ],
-    [ "knight2", whiteKnightType ],
-    [ "rock1", rockType],
-    [ "rock2", rockType],
-    [ "queen1", queenType ],
-    [ "queen2", queenType ],
-    [ "queen3", queenType ],
-    [ "queen4", queenType ],
-    [ "queen5", queenType ],
-    [ "queen6", queenType ],
-    [ "queen7", queenType ],
-    [ "queen8", queenType ]
+    [ "bishop", bishopType],
+    [ "knight", blueKnightType ],
+    [ "rock", rockType]
 ]
-let initializationListBlackFigurs = [
+let initializationListRedFigurs = [
     [ "king", kingType ],
-    [ "queen", queenType ],
-    [ "bishop1", bishopType],
-    [ "bishop2", bishopType],
-    [ "knight1", blackKnightType ],
-    [ "knight2", blackKnightType ],
-    [ "rock1", rockType],
-    [ "rock2", rockType],
-    [ "queen1", queenType ],
-    [ "queen2", queenType ],
-    [ "queen3", queenType ],
-    [ "queen4", queenType ],
-    [ "queen5", queenType ],
-    [ "queen6", queenType ],
-    [ "queen7", queenType ],
-    [ "queen8", queenType ]
+    [ "bishop", bishopType],
+    [ "knight", redKnightType ],
+    [ "rock", rockType]
 ]
-let initializationOfWhitePawnList = [
-    [ "pawn1", whitePawnType],
-    [ "pawn2", whitePawnType],
-    [ "pawn3", whitePawnType],
-    [ "pawn4", whitePawnType],
-    [ "pawn5", whitePawnType],
-    [ "pawn6", whitePawnType],
-    [ "pawn7", whitePawnType],
-    [ "pawn8", whitePawnType],
+let initializationListYellowFigurs = [
+    [ "king", kingType ],
+    [ "bishop", bishopType],
+    [ "knight", yellowKnightType ],
+    [ "rock", rockType]
 ]
-let initializationOfBlackPawnList = [
-    [ "pawn1", blackPawnType],
-    [ "pawn2", blackPawnType],
-    [ "pawn3", blackPawnType],
-    [ "pawn4", blackPawnType],
-    [ "pawn5", blackPawnType],
-    [ "pawn6", blackPawnType],
-    [ "pawn7", blackPawnType],
-    [ "pawn8", blackPawnType],
+let initializationListGreenFigurs = [
+    [ "king", kingType ],
+    [ "bishop", bishopType],
+    [ "knight", greenKnightType ],
+    [ "rock", rockType]
+]
+let initializationOfBluePawnList = [
+    [ "pawn1", pawnType],
+    [ "pawn2", pawnType],
+    [ "pawn3", pawnType],
+    [ "pawn4", pawnType],
+]
+let initializationOfRedPawnList = [
+    [ "pawn1", pawnType],
+    [ "pawn2", pawnType],
+    [ "pawn3", pawnType],
+    [ "pawn4", pawnType],
+]
+let initializationOfYellowPawnList = [
+    [ "pawn1", pawnType],
+    [ "pawn2", pawnType],
+    [ "pawn3", pawnType],
+    [ "pawn4", pawnType],
+]
+let initializationOfGreenPawnList = [
+    [ "pawn1", pawnType],
+    [ "pawn2", pawnType],
+    [ "pawn3", pawnType],
+    [ "pawn4", pawnType],
 ]
 
 
@@ -981,16 +897,21 @@ function inizializateElementList( elementList, teamName, displayInformation, gam
     game.setElement( figur )
 }
 
-initializateList( initializationListWhiteFigurs, whiteTeamName, whiteFigurDisplayInformation, game )
-initializateList( initializationListBlackFigurs, blackTeamName, blackFigurDisplayInformation, game )
-initializateList( initializationOfWhitePawnList, whiteTeamName, whiteFigurDisplayInformation, game )
-initializateList( initializationOfBlackPawnList, blackTeamName, blackFigurDisplayInformation, game )
+initializateList( initializationListBlueFigurs, blueTeamName, blueFigurDisplayInformation, game )
+initializateList( initializationListRedFigurs, redTeamName, redFigurDisplayInformation, game )
+initializateList( initializationListYellowFigurs, yellowTeamName, yellowFigurDisplayInformation, game )
+initializateList( initializationListGreenFigurs, greenTeamName, greenFigurDisplayInformation, game )
+
+initializateList( initializationOfBluePawnList, blueTeamName, blueFigurDisplayInformation, game )
+initializateList( initializationOfRedPawnList, redTeamName, redFigurDisplayInformation, game )
+initializateList( initializationOfYellowPawnList, yellowTeamName, yellowFigurDisplayInformation, game )
+initializateList( initializationOfGreenPawnList, greenTeamName, greenFigurDisplayInformation, game )
 
 
 
 
-let minMaxBot = new Bot()
-minMaxBot.setCalcNextMoveFunct( functCalcNextMoveMinMax )
+// let minMaxBot = new Bot()
+// minMaxBot.setCalcNextMoveFunct( functCalcNextMoveMinMax )
 
 // let hashBoardListMinMaxResult = {}
 // let MAX_DEPTH = 5;
@@ -1095,79 +1016,88 @@ game.setDisplay( facadeDisplay )
 
 
 function createStartBoard( board ) {
-    arrangeWhiteFigur( board )
-    arrangeBlackFigur( board )
+    arrangeBlueFigur( board )
+    arrangeRedFigur( board )
+    arrangeYellowFigur( board )
+    arrangeGreenFigur( board )
     arrangeBoardCell( board )
-    board.setWalkingTeam( "white" )
+    board.setWalkingTeam( "blue" )
 }
-function arrangeWhiteFigur( board ) {
-    board.selectFigurByName( "whiterock1" )
+function arrangeBlueFigur( board ) {
+    board.selectFigurByName( "bluerock" )
     board.setPositionForSelectFigur( new Pos( 0, 0 ) )
-    board.selectFigurByName( "whiteknight1" )
+    board.selectFigurByName( "blueknight" )
     board.setPositionForSelectFigur( new Pos( 1, 0 ) )
-    board.selectFigurByName( "whitebishop1" )
+    board.selectFigurByName( "bluebishop" )
     board.setPositionForSelectFigur( new Pos( 2, 0 ) )
-    board.selectFigurByName( "whitequeen" )
+    board.selectFigurByName( "blueking" )
     board.setPositionForSelectFigur( new Pos( 3, 0 ) )
-    board.selectFigurByName( "whiteking" )
-    board.setPositionForSelectFigur( new Pos( 4, 0 ) )
-    board.selectFigurByName( "whitebishop2" )
-    board.setPositionForSelectFigur( new Pos( 5, 0 ) )
-    board.selectFigurByName( "whiteknight2" )
-    board.setPositionForSelectFigur( new Pos( 6, 0 ) )
-    board.selectFigurByName( "whiterock2" )
-    board.setPositionForSelectFigur( new Pos( 7, 0 ) )
-    board.selectFigurByName( "whitepawn1" )
+    board.selectFigurByName( "bluepawn1" )
     board.setPositionForSelectFigur( new Pos( 0, 1 ) )
-    board.selectFigurByName( "whitepawn2" )
+    board.selectFigurByName( "bluepawn2" )
     board.setPositionForSelectFigur( new Pos( 1, 1 ) )
-    board.selectFigurByName( "whitepawn3" )
+    board.selectFigurByName( "bluepawn3" )
     board.setPositionForSelectFigur( new Pos( 2, 1 ) )
-    board.selectFigurByName( "whitepawn4" )
+    board.selectFigurByName( "bluepawn4" )
     board.setPositionForSelectFigur( new Pos( 3, 1 ) )
-    board.selectFigurByName( "whitepawn5" )
-    board.setPositionForSelectFigur( new Pos( 4, 1 ) )
-    board.selectFigurByName( "whitepawn6" )
-    board.setPositionForSelectFigur( new Pos( 5, 1 ) )
-    board.selectFigurByName( "whitepawn7" )
-    board.setPositionForSelectFigur( new Pos( 6, 1 ) )
-    board.selectFigurByName( "whitepawn8" )
-    board.setPositionForSelectFigur( new Pos( 7, 1 ) )
 }
-function arrangeBlackFigur( board ) {
-    board.selectFigurByName( "blackrock1" )
+function arrangeRedFigur( board ) {
+    board.selectFigurByName( "redrock" )
     board.setPositionForSelectFigur( new Pos( 0, 7) )
-    board.selectFigurByName( "blackknight1" )
-    board.setPositionForSelectFigur( new Pos( 1, 7 ) )
-    board.selectFigurByName( "blackbishop1" )
-    board.setPositionForSelectFigur( new Pos( 2, 7 ) )
-    board.selectFigurByName( "blackqueen" )
-    board.setPositionForSelectFigur( new Pos( 3, 7 ) )
-    board.selectFigurByName( "blackking" )
-    board.setPositionForSelectFigur( new Pos( 4, 7 ) )
-    board.selectFigurByName( "blackbishop2" )
-    board.setPositionForSelectFigur( new Pos( 5, 7 ) )
-    board.selectFigurByName( "blackknight2" )
-    board.setPositionForSelectFigur( new Pos( 6, 7 ) )
-    board.selectFigurByName( "blackrock2" )
-    board.setPositionForSelectFigur( new Pos( 7, 7 ) )
-    board.selectFigurByName( "blackpawn1" )
+    board.selectFigurByName( "redknight" )
     board.setPositionForSelectFigur( new Pos( 0, 6 ) )
-    board.selectFigurByName( "blackpawn2" )
+    board.selectFigurByName( "redbishop" )
+    board.setPositionForSelectFigur( new Pos( 0, 5 ) )
+    board.selectFigurByName( "redking" )
+    board.setPositionForSelectFigur( new Pos( 0, 4 ) )
+    board.selectFigurByName( "redpawn1" )
+    board.setPositionForSelectFigur( new Pos( 1, 7 ) )
+    board.selectFigurByName( "redpawn2" )
     board.setPositionForSelectFigur( new Pos( 1, 6 ) )
-    board.selectFigurByName( "blackpawn3" )
-    board.setPositionForSelectFigur( new Pos( 2, 6 ) )
-    board.selectFigurByName( "blackpawn4" )
-    board.setPositionForSelectFigur( new Pos( 3, 6 ) )
-    board.selectFigurByName( "blackpawn5" )
-    board.setPositionForSelectFigur( new Pos( 4, 6 ) )
-    board.selectFigurByName( "blackpawn6" )
-    board.setPositionForSelectFigur( new Pos( 5, 6 ) )
-    board.selectFigurByName( "blackpawn7" )
-    board.setPositionForSelectFigur( new Pos( 6, 6 ) )
-    board.selectFigurByName( "blackpawn8" )
-    board.setPositionForSelectFigur( new Pos( 7, 6 ) )
+    board.selectFigurByName( "redpawn3" )
+    board.setPositionForSelectFigur( new Pos( 1, 5 ) )
+    board.selectFigurByName( "redpawn4" )
+    board.setPositionForSelectFigur( new Pos( 1, 4 ) )
 }
+
+function arrangeYellowFigur( board ) {
+    board.selectFigurByName( "yellowrock" )
+    board.setPositionForSelectFigur( new Pos( 7, 7) )
+    board.selectFigurByName( "yellowknight" )
+    board.setPositionForSelectFigur( new Pos( 6, 7 ) )
+    board.selectFigurByName( "yellowbishop" )
+    board.setPositionForSelectFigur( new Pos( 5, 7 ) )
+    board.selectFigurByName( "yellowking" )
+    board.setPositionForSelectFigur( new Pos( 4, 7 ) )
+    board.selectFigurByName( "yellowpawn1" )
+    board.setPositionForSelectFigur( new Pos( 7, 6 ) )
+    board.selectFigurByName( "yellowpawn2" )
+    board.setPositionForSelectFigur( new Pos( 6, 6 ) )
+    board.selectFigurByName( "yellowpawn3" )
+    board.setPositionForSelectFigur( new Pos( 5, 6 ) )
+    board.selectFigurByName( "yellowpawn4" )
+    board.setPositionForSelectFigur( new Pos( 4, 6 ) )
+}
+
+function arrangeGreenFigur( board ) {
+    board.selectFigurByName( "greenrock" )
+    board.setPositionForSelectFigur( new Pos( 7, 0) )
+    board.selectFigurByName( "greenknight" )
+    board.setPositionForSelectFigur( new Pos( 7, 1 ) )
+    board.selectFigurByName( "greenbishop" )
+    board.setPositionForSelectFigur( new Pos( 7, 2 ) )
+    board.selectFigurByName( "greenking" )
+    board.setPositionForSelectFigur( new Pos( 7, 3 ) )
+    board.selectFigurByName( "greenpawn1" )
+    board.setPositionForSelectFigur( new Pos( 6, 0 ) )
+    board.selectFigurByName( "greenpawn2" )
+    board.setPositionForSelectFigur( new Pos( 6, 1 ) )
+    board.selectFigurByName( "greenpawn3" )
+    board.setPositionForSelectFigur( new Pos( 6, 2 ) )
+    board.selectFigurByName( "greenpawn4" )
+    board.setPositionForSelectFigur( new Pos( 6, 3 ) )
+}
+
 function arrangeBoardCell( board ) {
     iterateAllPositionAndArrangeCells( board, sizeBoard )
 }
@@ -1186,19 +1116,37 @@ function setPositionToCell( board, x, y, widthDesk) {
 }
 
 function calculateStatusOfGame( board ) {
-    let nameOfWhiteKing = "whiteking"
-    let nameOfBlackKing = "blackking"
-    if ( isNotEnableKingOnDesk( board, nameOfWhiteKing ) ) {
-        return blackTeamName
-    } else if ( isNotEnableKingOnDesk( board, nameOfBlackKing )  ) {
-        return whiteTeamName
+    let countOfEnableKing = 0
+    let nameOfblueKing = "blueking"
+    let nameOfredKing = "redking"
+    let nameOfYellowKing = "yellowking"
+    let nameOfGreenKing = "greenking"
+    let lastEnableKing 
+    if ( isEnableKingOnDesk( board, nameOfblueKing ) ) {
+        countOfEnableKing++
+        lastEnableKing = nameOfblueKing
+    }
+    if ( isEnableKingOnDesk( board, nameOfredKing ) ) {
+        countOfEnableKing++
+        lastEnableKing = nameOfredKing
+    }
+    if ( isEnableKingOnDesk( board, nameOfYellowKing ) ) {
+        countOfEnableKing++
+        lastEnableKing = nameOfYellowKing
+    }
+    if ( isEnableKingOnDesk( board, nameOfGreenKing ) ) {
+        countOfEnableKing++
+        lastEnableKing = nameOfGreenKing
+    }
+    if ( countOfEnableKing == 1) {
+        return lastEnableKing
     } else {
         return "_empty"
     }
 }
-function isNotEnableKingOnDesk( board, nameOfKing ) {
+function isEnableKingOnDesk( board, nameOfKing ) {
     let posKing = board.getFigurPosByName( nameOfKing )
-    return posKing.isNaN()
+    return !posKing.isNaN()
 }
 
 export { game }
