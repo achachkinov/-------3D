@@ -55,6 +55,12 @@ class RoomCollection {
             ws.send( messageJson )
         }
     }
+
+    deleteRoom( id ) {
+        delete this.rommsList[ id ]
+        this.#sendAllWS( { "type": "deleteRoom", "id": id } )
+    }
+
     getRoomById( id ) {
         return this.rommsList[id]
     }
@@ -173,7 +179,7 @@ class Room {
     #checkGameStatusAndSendMoveIfNeed() {
         let status = this.game.getStatus()
         if ( status != "_empty" ) {
-            console.log( "endGame", status)
+            this.roomCollection.deleteRoom( this.id )
         } else {
             this.#sendMovePos()
         }

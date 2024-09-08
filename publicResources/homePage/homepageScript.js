@@ -371,6 +371,12 @@ function processMessageWSFunct( event ) {
     } else if ( message.type == "updateOrCreatedNewRoom" ) {
         console.log(  message.information )
         createOpenRoomTile( message.information )
+    } else if ( message.type == "deleteRoom" ) {
+        if ( openRoomsOptionAndBlockList[ message.id ] ) {
+            block = openRoomsOptionAndBlockList[ message.id ].block
+            block.remove()
+            delete openRoomsOptionAndBlockList[ message.id ]
+        }
     }
 }
 
