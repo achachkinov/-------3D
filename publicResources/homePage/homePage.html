@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homePage/homePage.css"> 
+    <title> Home Page Chess Constuctor </title>
+</head>
+<body>
+    <div class="block header">
+        <div class="widther">
+            <a class="header-logo">
+                <img src="publicResources/icons/logo.png" class="img-logo"  alt="logo">
+                <div> <b>Chess Constructor</b> </div>  
+            </a>
+            <div class="header-menu">
+                <div class="block">
+                    <div class="boring-text">
+                        there may be functionality and a profile button
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="widther container">
+            <div class="col-4">
+                <div class="block" id="nicknameBlock">
+                    <div class="title"> <b>Nickname:</b> </div>
+                    <div class="paragraph">
+                        <input class="nickname-input" maxlength="200" placeholder="enter nickname" autocomplete="off" id="nicknameInput">
+                    </div>
+                </div>
+                <div class="block" id="openRoomsListBlock">
+                    <div class="title">
+                        <b> Open rooms: </b>
+                    </div>
+                    <div class="paragraph processing" id="openRoomsListProcessing"></div>
+                    <div class="paragraph openroom-container" id="openRoomsList"></div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="block " id="gamesListBlock">
+                    <div class="title">
+                        <b> Games: </b>
+                    </div>
+                    <div class="paragraph processing" id="gamesListProcessing"></div>
+                    <div class="paragraph games-conteiner" id="gameList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="widther container">
+            <div class="col-4">
+                <div class="small-text">
+                    CHESS CONSTRUCTOR - free game created for entertaiment without commercial purposes, no rights reserved
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="small-text">
+                    there will be all sorts of materials here
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="title">
+                    <b>Discord:</b>
+                </div>
+                <a href="https://discord.gg/wkJRsqtc7A">
+                    <div class="paragraph">                 
+                        <svg viewBox="0 0 47.615 36.513" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40.334 3.058A39.046 39.046 0 0 0 30.511 0a28.417 28.417 0 0 0-1.258 2.588 36.407 36.407 0 0 0-10.887 0A27.72 27.72 0 0 0 17.092 0a38.916 38.916 0 0 0-9.83 3.065C1.045 12.372-.64 21.447.202 30.393c4.124 3.05 8.12 4.903 12.048 6.116a29.63 29.63 0 0 0 2.58-4.21 25.475 25.475 0 0 1-4.063-1.959c.34-.25.674-.512.996-.78 7.835 3.63 16.347 3.63 24.088 0 .326.268.66.53.997.78a25.41 25.41 0 0 1-4.071 1.963 29.5 29.5 0 0 0 2.58 4.21c3.932-1.213 7.932-3.066 12.055-6.12.99-10.371-1.689-19.363-7.078-27.335ZM15.898 24.89c-2.352 0-4.28-2.175-4.28-4.823 0-2.65 1.887-4.828 4.28-4.828 2.393 0 4.322 2.175 4.28 4.828.004 2.648-1.887 4.823-4.28 4.823Zm15.819 0c-2.352 0-4.28-2.175-4.28-4.823 0-2.65 1.887-4.828 4.28-4.828 2.393 0 4.322 2.175 4.28 4.828 0 2.648-1.887 4.823-4.28 4.823Z" class="_color _color-primary" style="--fill:#FFFFFF">
+                            </path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="homePage/homepageScript.js"></script>
+</body>
+</html>

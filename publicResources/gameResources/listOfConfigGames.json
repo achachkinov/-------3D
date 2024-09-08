@@ -1,0 +1,30 @@
+{
+    "classic chess" : {
+        "src": "configsOfGame/configChess.js",
+        "description": "classic chess game",
+        "iconUrl": "icons/chess_classic_icon.png",
+        "amountOfPlayers": [ 2 ],
+        "teams": ["white", "black"]
+    },
+    "branivita" : {
+        "src": "configsOfGame/brainvitaConfig.js",
+        "description": "difficult game for single player",
+        "iconUrl": "icons/brainvita_icon.png",
+        "amountOfPlayers": [ 1 ],
+        "teams": ["balls"]
+    },
+    "pirates of the square seas" : {
+        "src": "configsOfGame/piratesConfig.js",
+        "description": "interesting game about pirates and square seas",
+        "iconUrl": "icons/in_development.png",
+        "amountOfPlayers": [ 2, 3, 4 ],
+        "teams": ["red", "blue", "green", "yelow"]
+    },
+    "diagonal chess" : {
+        "src": "configsOfGame/diagonalChess.js",
+        "description": "diagonal chess game",
+        "iconUrl": "icons/chess_diagonal_icon.png",
+        "amountOfPlayers": [ 2 ],
+        "teams": ["white", "black"]
+    }
+}

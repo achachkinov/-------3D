@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+    background-color: #EEEEEE;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: rgb(40, 163, 245);
+    width: 100vw;
+    height: 75px;
+    margin-bottom: 10px;
+
+    order: 1;
+}
+
+.header .widther {
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    height: 75px;
+}
+.header.block {
+    background-color: #28a3f5;
+    border-radius: 0;
+}
+
+.main {
+    height: 1000px;
+
+    order: 2;
+}
+
+.footer {
+    margin-top: 10px;
+    background-color: rgb(33, 136, 204);
+
+    order: 3;
+
+    width: 100vw;
+    height: 30vh;
+    justify-content: center;
+}
+
+.block {
+    margin-bottom: 20px;
+    padding-top: .1px;
+    background-color: white;
+    display: block;
+    border-color: gray;
+    border-bottom: 2px solid rgba(0,0,0,.1);
+    border-radius: 5px;
+}
+
+.widther {
+    margin-left: auto;
+    margin-right: auto;
+    width: min( 1600px, 100% );
+}
+
+.container {
+    display: grid !important;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 25px;
+}
+
+.games-conteiner {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax( 120px, 1fr ));
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+.container-team-openroom {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, 70px );
+    grid-gap: 15px;
+    /* justify-content: center; */
+}
+
+.container-8 {
+    display: grid;
+    grid-template-columns: repeat( 8, 1fr );
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+.container-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    justify-content: center;
+}
+
+.col-8 {
+    grid-column-end: span 8;
+    min-width: 0;
+}
+
+.col-4 {
+    grid-column-end: span 4;
+    min-width: 0;
+}
+
+.col-3 {
+    grid-column-end: span 3;
+    min-width: 0;
+}
+
+.col-2 {
+    grid-column-end: span 2;
+    min-width: 0;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    border: none !important;
+}
+
+.header-logo > div {
+    color: white;
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+.header-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    height: 75px;
+}
+
+.header-menu .block {
+    margin-left: auto;
+    margin-right: 0px;
+}
+
+.boring-text {
+    margin: 10px;
+}
+
+.small-text {
+    color: rgb(238, 238, 238);
+    margin: 15px 10px;
+    font-size: 15px;
+    line-height: 18px;
+    word-spacing:2px;
+}
+
+.img-logo {
+    width: 75px;
+}
+.img-logo-game {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.title {
+    position: relative;
+    margin: 20px;
+    color: black;
+    font-size: 30px;
+    line-height: 18px;
+    word-spacing:2px;
+}
+
+.footer .title {
+    color: rgb(238, 238, 238);
+}
+
+.paragraph {
+    position: relative;
+    margin: 20px;
+}
+
+.bottom-pass {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.nickname-input {
+    padding-right: 40px;
+    width: 96%;
+
+    border: 1px solid #b6b6b6;
+    border-radius: 8px;
+    background-color: solid #b6b6b6;
+    font-size: 14px;
+    outline: 0;
+    transition: border-color .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    padding: 0 2%;
+    height: 35px;
+}
+
+.footer svg {
+    margin-right: 10px;
+    max-width: 100px;
+    height: 50px;
+}
+
+.footer svg ._color-primary {
+    transition: 0.25s;
+}
+
+.footer svg:not(:hover) ._color-primary {
+    fill: rgb(238, 238, 238);
+}
+
+.processing {
+    height: 60px;
+    background: center / auto 35px no-repeat;
+    color: transparent !important;
+    cursor: default;
+}
+
+body:not([theme]) .processing, body:not([theme]) [v-cloak^=processing] {
+    background-image: url(../../publicResources/icons/download.gif);
+}
+
+.block.game-block {
+    background-color: #f5f4f4;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.text-gamename, .text-gamename-openroom {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(90, 90, 90);
+    font-size: 20px;
+    line-height: 18px;
+    word-spacing:2px;
+}
+
+.description {
+    color: rgb(117, 117, 117);
+    font-size: 15px;
+    line-height: 18px;
+    word-spacing:2px;
+}
+
+.blur {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.start-game-menu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5f4f4;;
+
+    justify-content: center;
+    padding: 25px;
+    width: 400px;
+    height: auto;
+    position: fixed;
+}
+
+.start-game-menu > .text-gamename {
+    font-size: 40px;
+    line-height: 32px;
+    word-spacing: 2px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selector-option, .selector-amount-of-players {
+    margin-bottom: 15px;
+    width: 35px;
+    border-radius: 10px;
+    border-color: grey;
+}
+
+.icon-user {
+    width: 100%;
+}
+
+.icon-user-div {
+    margin: 10px;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.block.button {
+    background-color: rgb(28, 197, 28);
+    height: 50px;
+    margin-bottom: 0px;
+}
+
+.block.button:hover {
+    background-color: rgb(31, 219, 31);
+    transition: 0.25s;
+}
+
+.text-button {
+    color: white;
+    height: 100%;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.button-add-bot, .button-delete-bot {
+    height: 20px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.button-add-bot {
+    background-color: rgb(128, 128, 128);
+    transition: 0.25s;
+}
+
+.button-add-bot:hover {
+    background-color: rgb(165, 165, 165);
+}
+
+.button-delete-bot {
+    background-color: rgb(212, 42, 42);
+    transition: 0.25s;    
+}
+
+.button-delete-bot:hover {
+    background-color: rgb(241, 44, 44);
+}
+
+.hiden {
+    visibility: hidden;
+}
+
+.inform-text {
+    color: #b6b6b6;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.block.open-room-block {
+    padding: 10px;
+    background-color: #ebebeb;
+}
+
+.text-gamename-openroom {
+    font-size: 20px;
+}
+
+.openroom-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-team-openroom > .block {
+    margin-bottom: 0;
+}
+
+.container-team-openroom .inform-text {
+    margin-bottom: 1px;
+}
+.container-team-openroom .icon-user-div {
+    cursor: default;
+    margin: 5px;
+    margin-bottom: 0;
+}
+.container-team-openroom .icon-user-div-pointer {
+    cursor: pointer;
+    margin: 5px;
+    margin-bottom: 0;
+}
+
+.container-team-openroom .text-gamename {
+    font-size: 18px;
+    margin: 5px;
+    margin-top: 0;
+}

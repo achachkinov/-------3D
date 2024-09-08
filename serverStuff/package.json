@@ -1,0 +1,12 @@
+{
+  "name": "chess_constructor",
+  "version": "1.0.0",
+  "description": "server and client of game \"chess constructor\"",
+  "main": "serverStart.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "achach",
+  "license": "ISC"
+}
