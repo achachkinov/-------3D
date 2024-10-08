@@ -149,8 +149,28 @@ class FacadeDisplay {
         this.display.updateSize()
         this.render()
     }
-    processEventButtonDown() {
-        //todo
+    processEventKeyDown() {
+        let keys = this.wrapperOfEvenListener.getListOfkeysDown()
+        console.log( "what" )
+        if ( keys["w"] || keys["a"] || keys["s"] || keys["d"] ) {
+            let changeX = 0
+            let changeY = 0
+            if ( keys["w"] ) {
+                changeX += 5
+            }
+            if ( keys["s"] ) { 
+                changeX -= 5
+            }
+            if ( keys["a"] ){
+                changeY += 5
+            } 
+            if ( keys["d"] ) {
+                changeY -= 5
+            }
+            this.display.addEventNumberWithShiftToCamera( changeX, changeY )
+            this.render()
+            setTimeout( () => { this.processEventKeyDown() }, 10 )
+        }
     }
 
     #coloredSelectFigurAndEndPos( pos, listOfEndPos ) {
@@ -268,6 +288,7 @@ class WrapperOfEvenListener {
         this.isLMBDownInf = false
         this.isShiftDownInf = false
         this.wheelNum
+        this.listOfkeysDown = {}
 
         this.disableContextMenu = event => { event.preventDefault() }        
         this.mouseDownFunct = event => { WrapperOfEvenListener.processMouseDownByWrapper( event, this ) }
@@ -275,6 +296,8 @@ class WrapperOfEvenListener {
         this.mouseUpFunct =  event => { WrapperOfEvenListener.processMouseUpByWrapper( event, this )}
         this.wheelFunct = event => { WrapperOfEvenListener.processWheelByWrapper( event, this ) }
         this.changeSizeFunt = event => { WrapperOfEvenListener.changeSize( event, this ) }
+        this.keyUpFunct = event => { WrapperOfEvenListener.processKeyUpByWrapper( event, this ) }
+        this.keyDownFunct = event => { WrapperOfEvenListener.processKeyDownByWrapper( event, this ) }
     }
 
     deleteEventListener() {
@@ -283,6 +306,8 @@ class WrapperOfEvenListener {
         document.removeEventListener("mousemove", this.mouseMoveFunct)
         document.removeEventListener("mouseup", this.mouseUpFunct)
         document.removeEventListener("wheel", this.wheelFunct )
+        document.removeEventListener("keyup", this.keyUpFunct )
+        document.removeEventListener("keydown", this.keyDownFunct )
         window.removeEventListener('resize', this.changeSizeFunt )
     }
     createEventListener() {
@@ -291,6 +316,8 @@ class WrapperOfEvenListener {
         document.addEventListener("mousemove", this.mouseMoveFunct )
         document.addEventListener("mouseup", this.mouseUpFunct )
         document.addEventListener("wheel", this.wheelFunct )
+        document.addEventListener("keyup", this.keyUpFunct )
+        document.addEventListener("keydown", this.keyDownFunct )
         window.addEventListener('resize', this.changeSizeFunt )
     }
 
@@ -308,6 +335,12 @@ class WrapperOfEvenListener {
     }
     static changeSize( event, wrapper ) {
         wrapper.processChangeSize()
+    }
+    static processKeyUpByWrapper( event, wrapper ) {
+        wrapper.processKeyUp( event )
+    }
+    static processKeyDownByWrapper( event, wrapper ) {
+        wrapper.processKeyDown( event )
     }
 
     processMouseDown( event ) {
@@ -390,6 +423,17 @@ class WrapperOfEvenListener {
         this.facadeDisplay.processEventResize()
     }
 
+    processKeyUp( event ) {
+        this.listOfkeysDown[ event.key ] = false
+    }
+
+    processKeyDown( event ) {
+        if (!this.listOfkeysDown[ event.key ]) {
+            this.listOfkeysDown[ event.key ] = true
+            this.facadeDisplay.processEventKeyDown()
+        }
+    }
+
     isRMBDown() {
         return this.isRMBDownInf
     }
@@ -416,6 +460,9 @@ class WrapperOfEvenListener {
     }
     getWheelNum() {
         return this.wheelNum
+    }
+    getListOfkeysDown() {
+        return this.listOfkeysDown
     }
 
     setFacadeDisplay( facadeDisplay ) {

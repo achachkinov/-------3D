@@ -448,8 +448,10 @@ class VisitorOfEnableMoves {
             if ( this.#isMovingTeam( element )) {
                 let startPos = iteratorOfElements.getPosOfCurrentItem()
                 if ( startPos != undefined ) {
-                    let moves = element.getMoves()
-                    this.#processMoves( moves, startPos )
+                    if ( !startPos.isNaN() ) {
+                        let moves = element.getMoves()
+                        this.#processMoves( moves, startPos )
+                    }
                 }
             }
         }

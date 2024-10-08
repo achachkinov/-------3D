@@ -989,8 +989,8 @@ initializateList( initializationOfBlackPawnList, blackTeamName, blackFigurDispla
 
 
 
-let minMaxBot = new Bot()
-minMaxBot.setCalcNextMoveFunct( functCalcNextMoveMinMax )
+// let minMaxBot = new Bot()
+// minMaxBot.setCalcNextMoveFunct( functCalcNextMoveMinMax )
 
 // let hashBoardListMinMaxResult = {}
 // let MAX_DEPTH = 5;

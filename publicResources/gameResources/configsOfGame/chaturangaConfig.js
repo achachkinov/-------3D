@@ -362,7 +362,7 @@ greenKnightModel.addBuilderModel( "headknight", greenHeadOfKnigth )
 greenKnightDisplayInformationOfType.setBuilderModel( greenKnightModel )
 greenKnightType.setDisplayInformationOfType( greenKnightDisplayInformationOfType )
 
-redKnightType.addMove(knightMove)
+greenKnightType.addMove(knightMove)
 
 
 let kingType = new TypeOfFigur()
@@ -449,7 +449,7 @@ let whitePawnMoveForward = new Move()
 whitePawnMoveForward.setFunctOfCalcOfMovePosition( whitePawnCalcMoveForward )
 whitePawnMoveForward.setFunctOfIsPosibleToMove( pawnPossibleMoveForward )
 whitePawnMoveForward.setFunctOfIsTimeToBreak( pawnTimeToBreak )
-whitePawnMoveForward.setFunctOfChangeBoard( pawnChangeBoard )
+whitePawnMoveForward.setFunctOfChangeBoard( classicChangeBoard )
 let whitePawnMoveTwoCellsForward = whitePawnMoveForward.getCopy()
 whitePawnMoveTwoCellsForward.setFunctOfCalcOfMovePosition( whitePawnCalcMoveTwoCellsForward )
 whitePawnMoveTwoCellsForward.setFunctOfIsPosibleToMove( whitePawnPossibleTwoCellsForward )
@@ -525,13 +525,6 @@ function pawnTimeToBreak( board, startPos, itteratorNum, endPos ) {
 
 function pawnTimeToBreakForEat( board, startPos, itteratorNum, endPos ) {
     return itteratorNum == 1
-}
-
-function pawnChangeBoard( board, startPos, endPos ) {
-    board.selectFigurByPosition( startPos )
-    board.setPositionForSelectFigur( endPos )
-    changeWalkingTeam( board )
-    return board
 }
 
 
@@ -632,7 +625,6 @@ function whitePawnCalcMoveForward( board, startPos, itteratorNum ) {
     } else if ( figur.getTeam() == "green" ) {
         endPos.addX( -1 )
     }
-    console.log( endPos, "what" )
     return endPos
 } 
 
@@ -670,7 +662,6 @@ function whitePawnCalcEatFigur( board, startPos, itteratorNum) {
         endPos.addX( -1 )
         endPos.addY( x )
     }
-    console.log( endPos, "what2" )
     return endPos
 }
 
@@ -693,18 +684,28 @@ function changeWalkingTeam( board ) {
     //     board.setWalkingTeam( "white" )
     // }
     if ( board.getWalkingTeam() == "blue" ) {
-        board.setWalkingTeam( "red" )
+        calculateAndSetNewWalkingTeam( "red", "yellow", "green", "blue", board )
     } else if ( board.getWalkingTeam() == "red" ){
-        board.setWalkingTeam( "yellow" )
+        calculateAndSetNewWalkingTeam( "yellow", "green", "blue", "red", board )
     } else if ( board.getWalkingTeam() == "yellow" ) {
-        board.setWalkingTeam( "green" )
-    } else if ( board.getWalkingTeam( "green" ) ) {
-        board.setWalkingTeam( "blue" )
+        calculateAndSetNewWalkingTeam( "green", "blue", "red", "yellow", board )
+    } else if ( board.getWalkingTeam() == "green") {
+        calculateAndSetNewWalkingTeam( "blue", "red", "yellow", "green", board )
     }
     //moveIndex++
 }
 
-
+function calculateAndSetNewWalkingTeam( team1, team2, team3, team4, board ) {
+    if ( isEnableKingOnDesk( board, team1 + "king" ) ) {
+        board.setWalkingTeam( team1 )
+    } else if ( isEnableKingOnDesk( board, team2 + "king" ) ) {
+        board.setWalkingTeam( team2 )
+    } else if ( isEnableKingOnDesk( board, team3 + "king" ) ) {
+        board.setWalkingTeam( team3 )
+    } else {
+        board.setWalkingTeam( team4 )
+    }
+}
 
 
 
